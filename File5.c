@@ -1,21 +1,25 @@
 #include <stdio.h>
 #define _USE_MATH_DEFINES
-#define e 2,71828
-#define t 0,5
+#define e 2.71828
+#define t 0.5
 #include <locale.h>
 #include <math.h>
 
+
 double F(double x, double y) {
-    return (pow(sin(x), 3) + log(pow(2*y + 3*x, e))) / (pow(t, e) + sqrt(x));
+    return (pow(sin(x), 3) + log(2 * y + 3 * x)) / (pow(t, e) + sqrt(x));
 }
 int main() {
-    double result1 = F(2, 1.5 * pow(10, -6));
-    double result2 = F(4, 2);
+    double x, y;
 
-    printf("F( - 10^-5) = %.6f\n", result1);
-    printf("F(4, 2) = %.6f\n", result2);
+    printf("Puts x:\n");
+    scanf_s("%lf", &x);
 
+    printf("Puts y:\n");
+    scanf_s("%lf", &y);
+
+    double result1 = F(x, y);
+
+    printf("%.6f\n", result1);
     return 0;
-
-
 }
